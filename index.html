@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>G-Note</title>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+
+	<!-- Codemirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.4/codemirror.min.js" integrity="sha512-M1DpFDDFHNgGdgVsSkTP1sjfWC7mQFJM3obQo8gyKHbZmbmr95Kl9wPYa5T70BFQBi0+/TlcG6IZDLowJCbKBQ==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.4/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous" />
+	
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://firepad.io/releases/v1.5.9/firepad.css"/>
+	<script src="https://firepad.io/releases/v1.5.9/firepad.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="main.js"> </script>
+
+  <script src="userlist.js"></script>
+  <link rel="stylesheet" href="userlist.css" /> 
+
+</head>
+<body onload="init()">
+  
+  <div id="firepad-container">  
+  </div>
+  <div id="userlist"></div>
+</body>
+</html>

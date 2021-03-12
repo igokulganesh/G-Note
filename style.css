@@ -1,0 +1,41 @@
+html { 
+	height: 100%; 
+}
+    
+body { 
+	margin: 0; 
+	height: 100%; 
+	position: relative; 
+}
+    
+#firepad-container {    
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    right: 200px; 
+    height: 100;
+}
+
+#userlist {
+  position: absolute; 
+  right: 0; 
+  top: 65px; 
+  bottom: 0; 
+  height: auto;
+  width: 200px;
+}
+
+.powered-by-firepad {
+  display: none;
+  opacity: 0;
+}
+
+/*.firepad {
+  background-color: white; / dark orange background /
+}
+
+.CodeMirror {
+  background-color: white;
+}*/
+
