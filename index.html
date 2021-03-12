@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>G-Note</title>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>G-Note</title>
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
 
 	<!-- Codemirror -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.4/codemirror.min.js" integrity="sha512-M1DpFDDFHNgGdgVsSkTP1sjfWC7mQFJM3obQo8gyKHbZmbmr95Kl9wPYa5T70BFQBi0+/TlcG6IZDLowJCbKBQ==" crossorigin="anonymous"></script>
@@ -24,27 +17,36 @@
 	<link rel="stylesheet" href="https://firepad.io/releases/v1.5.9/firepad.css"/>
 	<script src="https://firepad.io/releases/v1.5.9/firepad.min.js"></script>
 
+	<!-- local -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="main.js"> </script>
+	<script src="userlist.js"></script>
+	<link rel="stylesheet" href="userlist.css"> 
+	<link rel="icon" href="icon.png" type="image/x-icon">
 
-  <script src="userlist.js"></script>
-  <link rel="stylesheet" href="userlist.css" /> 
-  <link rel="icon" href="icon.png" type="image/x-icon">
+	<!-- bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
 <body onload="init()">
 
-	<div class="modal hide" id="InputModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal hide" id="InputModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" keyboard="false">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
 	    	<!--Header-->
 	      <div class="modal-header">
 	        <img src="icon.png" alt="avatar" style="width: 50px; height: 50px; align-items: center;">
+				<h3>Enter Your Notepad Code</h3><br>	        	
 	      </div>
 	      <!-- Body -->
 	    	<div class="modal-body">
-	    		<h5 class="modal-title" id="exampleModalLabel">Enter your Notepad Name</h5><br>
-        	<input type="text" id="noteName" class="form-control validate" required="true"><br>
+	    	<p align="center">
+	    		Use this code for collabration and accessing the notes for later !
+	    	</p>
+        	<input type="text" id="noteName" class="form-control validate" placeholder="Example: MyFirstNote" required="true"><br><br>
 	        <button onclick="init_pad()" class="btn btn-primary">Submit</button>
 	      </div>
 	    </div>
@@ -54,10 +56,10 @@
 
   <div id="firepad-container">
   	<!-- Button trigger modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InputModal">
-  Launch demo modal
-</button>
- -->
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#InputModal">
+	  Launch demo modal
+	</button>
+	 -->
 	</div>
   <div id="userlist"></div>
 
