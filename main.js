@@ -10,10 +10,28 @@ function init()
     messagingSenderId: "451807484392",
     appId: "1:451807484392:web:a273a3ea52f013f2ad6c5d"
   };
+  
+  $('#InputModal').modal({
+    backdrop: 'static',
+    keyboard: false
+  });
 
   // Initialize Firebase
   firebase.initializeApp(config);
 
+  var hash = window.location.hash.replace(/#/g,'');
+  if(hash) 
+  {
+    init_pad();
+  } 
+  else
+  {
+    $("#InputModal").modal("show"); 
+  }
+}; 
+
+function init_pad()
+{
   //// Get Firebase Database reference.
   var firepadRef = getRef();
 
@@ -59,8 +77,13 @@ function getRef()
   } 
   else 
   {
-    ref = ref.push(); // generate unique location.
-    window.location = window.location + '#' + ref.key; // add it as a hash to the URL.
+    $("#InputModal").modal("hide"); 
+    hash = $('#noteName').val();
+    if(!hash)
+      hash = "default"; 
+    ref = ref.child(hash); 
+    //ref = ref.push(); // generate unique location.
+    window.location = window.location + '#' + hash ; // add it as a hash to the URL.
   }
     
   return ref;
