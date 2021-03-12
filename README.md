@@ -3,4 +3,4 @@ G-Note is Realtime multi-user interactive Notepadsupport via Firepad.io . Firepa
 
 # website
 - Hosted in [Firebase](g-notepad.firebaseapp.com)
-- Hosted in [github-pages](g-notepad.firebaseapp.com)
+- Hosted in [github-pages](https://igokulganesh.github.io/G-Note/)
