@@ -1,4 +1,3 @@
-//var cur_user = null ; 
 function init() 
 {
 
@@ -16,6 +15,7 @@ function init()
 
   // Initialize Firebase
   firebase.initializeApp(config);
+
   //// Get Firebase Database reference.
   var firepadRef = getRef();
 
@@ -24,7 +24,6 @@ function init()
 
   // Create a random ID to use as our user ID (we must give this to firepad and FirepadUserList).
   var userId = Math.floor(Math.random() * 9999999999).toString();
-  //var userId = cur_user ; 
 
   //// Create Firepad (with rich text toolbar and shortcuts enabled).
   var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, { 
@@ -45,7 +44,7 @@ function init()
   { 
     if (firepad.isHistoryEmpty()) 
     {
-      firepad.setHtml('<span style="font-size: 22px;">Hello World!');
+      firepad.setHtml('<span style="font-size: 20px;">Hello World!');
     }
   });
 }
