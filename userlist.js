@@ -51,7 +51,7 @@ var FirepadUserList = (function() {
     });
 
     return elt('div', [
-      elt('span', 'ONLINE ('),
+      elt('span', 'Online ('),
       counterSpan,
       elt('span', ')')
     ], { 'class': 'firepad-userlist-heading' });
