@@ -5,7 +5,8 @@ G-Note is Realtime multi-user interactive Notepadsupport via [Firepad](https://f
 - Hosted in [Firebase](https://g-notepad.firebaseapp.com/)
 - Hosted in [github-pages](https://igokulganesh.github.io/G-Note/)
 
-## Feautures to be added 
+<!-- 
+# Feautures to be added 
 1. Save files as txt  
 2. Google Authentication 
 3. login/logout 
@@ -19,4 +20,5 @@ G-Note is Realtime multi-user interactive Notepadsupport via [Firepad](https://f
 11. Completely Delete the Note 
 12. Save the files in google drive 
 13. download as pdf 
-14. Image resizing
+14. Image resizing 
+-->
